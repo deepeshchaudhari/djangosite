@@ -7,3 +7,5 @@ django-admin startproject <project name>
 #wsgi.py: web server gateway interface(just for hosting website)
 #url.py: url related work
 #setting.py: all the packages setting related to site
+# to start server
+python manage.py runserver
