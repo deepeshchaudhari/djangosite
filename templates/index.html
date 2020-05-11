@@ -5,10 +5,20 @@
     <title>Template: Home page</title>
 </head>
 <body>
-    <a href="http://127.0.0.1:8000">Home  </a>
-    <a href="http://127.0.0.1:8000/about"> About  </a>
-    <a href="http://127.0.0.1:8000/readtext"> Read Commands  </a>
-    <br>
-    This is Home template is made by {{name}} at {{place}}
+<!--    <a href="http://127.0.0.1:8000">Home  </a>-->
+<!--    <a href="http://127.0.0.1:8000/about"> About  </a>-->
+<!--    <a href="http://127.0.0.1:8000/readtext"> Read Commands  </a>-->
+<!--    <br>-->
+<h1>Welcome to text analyzer, Enter  your text</h1>
+<form action="/analyze" method="get">
+    <textarea name= 'text' style='margin: 0px; height: 180px; width: 557px;'></textarea>
+<br>
+<input type="checkbox" name="removepunc"> Remove Punctuation
+<br>
+<input type="checkbox" name="fullcaps"> FULL CAPS
+<br>
+<br>
+<button type="submit">Analyze Text</button>
+</form>
 </body>
 </html>
