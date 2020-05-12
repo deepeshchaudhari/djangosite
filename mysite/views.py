@@ -5,7 +5,6 @@
 from django.http import HttpResponse
 from  django.shortcuts import render
 def  index(request):
-    # params = {'name': 'Deepesh Chaudhari', 'place': 'Kanpur'}
     return render(request,'index.html')
 
 def  about(request):
@@ -17,31 +16,26 @@ def  analyze(request):
     # checknox value
     removepunc = request.GET.get('removepunc','off')
     fullcaps = request.GET.get('fullcaps','off')
+    encr = request.GET.get('encrypt','off')
 
     punctuation = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~0123456789'''
     analyzed =''
     purpose =''
-    # apply operation according to checkbos value
-    if removepunc =='on' and fullcaps=='off':
+    encrypted='Not Needed!!!'
+    if removepunc == 'on':
         purpose ="Punctuation Removal"
         for char in djtext:
             if char not in punctuation:
                 analyzed+=char
-        print(analyzed)
-    elif removepunc =='on' and fullcaps=='on':
-        purpose ="Punctuation Removal and change to uppercase"
-        for char in djtext:
-            if char not in punctuation:
-                analyzed+=char
-        analyzed = analyzed.upper()
-    elif removepunc =='off' and fullcaps=='on':
-        purpose ="Change to uppercase"
-        analyzed = djtext.upper()
-    else:
-        analyzed=djtext
-
+        djtext = analyzed
+    if encr == 'on':
+        print(djtext)
+        encrypted =encrypt(djtext.lower(),4).replace('$',' ')
+    if  fullcaps=='on':
+        purpose = purpose+ " Capital letter"
+        djtext = djtext.upper()
     # set to variable and send to html page
-    param ={'purpose': purpose ,'analyzing': analyzed}
+    param ={'purpose': purpose ,'analyzing': djtext,'encrypted':encrypted}
     return render(request,'analyze.html',param)
 
 def  readtext(request):
@@ -49,3 +43,17 @@ def  readtext(request):
         data = f.read()
     params = {'data':data}
     return render(request,'readtext.html',params)
+
+def encrypt(string,key):
+    for x in string:
+        if ord(x)>=123 or ord(x)< 97 and x!=' ':
+            return "Punctuations are not removed!!!"
+    res=''
+    for x in string:
+        if (ord(x)) % 2:
+            if ord(x)- key< 97:res+=chr(ord(x)- key+26)
+            else:res+=chr(ord(x)- key)
+        else:
+            if ord(x)+ key>122:res+=chr(ord(x) + key-26)
+            else:res+=chr(ord(x) + key)
+    return res

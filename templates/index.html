@@ -1,24 +1,80 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Template: Home page</title>
-</head>
-<body>
-<!--    <a href="http://127.0.0.1:8000">Home  </a>-->
-<!--    <a href="http://127.0.0.1:8000/about"> About  </a>-->
-<!--    <a href="http://127.0.0.1:8000/readtext"> Read Commands  </a>-->
-<!--    <br>-->
-<h1>Welcome to text analyzer, Enter  your text</h1>
-<form action="/analyze" method="get">
-    <textarea name= 'text' style='margin: 0px; height: 180px; width: 557px;'></textarea>
-<br>
-<input type="checkbox" name="removepunc"> Remove Punctuation
-<br>
-<input type="checkbox" name="fullcaps"> FULL CAPS
-<br>
-<br>
-<button type="submit">Analyze Text</button>
-</form>
-</body>
+  <head>
+   <title>Template: Index2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Text Analyzer</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+        </nav>
+
+
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>Welcome to Text Analyzer!!! </strong>  You can analyze your text here...
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            <div class="container">
+
+                <form action="/analyze" method="get">
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"><h1 class="display-4"> Enter your text here...</h1></label>
+                    <textarea class="form-control" name ="text"id="exampleFormControlTextarea1" rows="5" required="required"></textarea>
+                  </div>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+                  <label class="custom-control-label" for="customSwitch1">Remove Punctuation</label>
+                </div>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+                  <label class="custom-control-label" for="customSwitch2">Capital letter</label>
+                </div>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="encrypt" class="custom-control-input" id="customSwitch3">
+                  <label class="custom-control-label" for="customSwitch3">Encrypt Text</label>
+                </div>
+
+                <button type="submit" class="btn btn-dark mt-3">Analyze Text</button>
+                </form>
+            </div>
+        </div>
+<!--        </div>-->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
