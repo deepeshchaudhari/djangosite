@@ -44,6 +44,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+
             <div class="container">
 
                 <form action="/analyze" method="get">
@@ -63,7 +64,14 @@
                   <input type="checkbox" name="encrypt" class="custom-control-input" id="customSwitch3">
                   <label class="custom-control-label" for="customSwitch3">Encrypt Text</label>
                 </div>
-
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="decrypt" class="custom-control-input" id="customSwitch4">
+                  <label class="custom-control-label" for="customSwitch4">Decrypt Text</label>
+                </div>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="all" class="custom-control-input" id="customSwitch5">
+                  <label class="custom-control-label" for="customSwitch5">All of the above</label>
+                </div>
                 <button type="submit" class="btn btn-dark mt-3">Analyze Text</button>
                 </form>
             </div>
